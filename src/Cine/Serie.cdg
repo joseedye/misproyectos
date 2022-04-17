@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Serie">
+  <ClassDiagramComponents>
+    <Class name="Serie" package="" visibility="public" xPosition="18.0" yPosition="20.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="amio_de_inicio" type="String" visibility="private"/>
+        <Field name="Genero" type="String" visibility="private"/>
+        <Field name="sinopsis" type="String" visibility="private"/>
+        <Field name="puntuacion" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Temporada" package="" visibility="public" xPosition="35.0" yPosition="420.0">
+      <Fields>
+        <Field name="fecha_produccion" type="Date" visibility="private"/>
+        <Field name="fecha_estreno" type="Date" visibility="private"/>
+        <Field name="estado" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Critica" package="" visibility="public" xPosition="148.0" yPosition="252.0">
+      <Fields>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="comentario" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Capitulo" package="" visibility="public" xPosition="318.0" yPosition="430.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="duracion" type="Integer" visibility="private"/>
+        <Field name="sinopsis" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Personaje" package="" visibility="public" xPosition="344.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Actor" package="" visibility="public" xPosition="616.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Subtitulo" package="" visibility="public" xPosition="693.0" yPosition="440.0">
+      <Fields>
+        <Field name="idioma" type="String" visibility="private"/>
+        <Field name="actor" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Usuario" package="" visibility="public" xPosition="476.0" yPosition="198.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="fecha_de_nacimiento" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="Genero" package="" visibility="public" xPosition="680.0" yPosition="140.0">
+      <Literals/>
+    </Enum>
+    <Enum name="Estado" package="" visibility="public" xPosition="680.0" yPosition="241.0">
+      <Literals>
+        <Literal name="Empezada"/>
+        <Literal name="Vista"/>
+        <Literal name="Cancelada"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="organiza" source="Serie" target="Temporada" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="aparece" source="Capitulo" target="Personaje" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Personaje" target="Actor"/>
+    <HasRelation name="formada" source="Temporada" target="Capitulo" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="puede_tener" source="Serie" target="Critica" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="intervenir" source="Serie" target="Personaje" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="escribe" source="Critica" target="Usuario" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="puede" source="Capitulo" target="Critica" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="visto" source="Capitulo" target="Usuario" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="favorita" source="Serie" target="Usuario" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="puntua" source="Serie" target="Usuario" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="tiene" source="Capitulo" target="Subtitulo" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

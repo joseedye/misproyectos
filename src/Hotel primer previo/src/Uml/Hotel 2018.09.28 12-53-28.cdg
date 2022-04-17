@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Hotel">
+  <ClassDiagramComponents>
+    <Class name="Control" package="Controlador" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Habitacion" package="Modelo" visibility="public" xPosition="-41.0" yPosition="220.0">
+      <Fields>
+        <Field name="piso" type="int" visibility="package"/>
+        <Field name="precio_alquiler" type="double" visibility="package"/>
+        <Field name="temporada" type="String" visibility="package"/>
+        <Field name="num_habitacion" type="int" visibility="package"/>
+        <Field name="cap_maxima" type="int" visibility="package"/>
+        <Field name="can_disponible" type="int" visibility="package"/>
+        <Field name="responsable" type="Persona" visibility="package"/>
+        <Field name="huespedes" type="ArrayList&lt;Persona&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="piso"/>
+          <Argument type="double" name="precio_alquiler"/>
+          <Argument type="String" name="temporada"/>
+          <Argument type="int" name="numero_habitacion"/>
+          <Argument type="int" name="capacidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPiso" returnType="int" visibility="public"/>
+        <Method name="setPiso" returnType="void" visibility="public">
+          <Argument type="int" name="piso"/>
+        </Method>
+        <Method name="getPrecio_alquiler" returnType="double" visibility="public"/>
+        <Method name="setPrecio_alquiler" returnType="void" visibility="public">
+          <Argument type="double" name="precio_alquiler"/>
+        </Method>
+        <Method name="getTemporada" returnType="String" visibility="public"/>
+        <Method name="setTemporada" returnType="void" visibility="public">
+          <Argument type="String" name="temporada"/>
+        </Method>
+        <Method name="getNum_habitacion" returnType="int" visibility="public"/>
+        <Method name="setNum_habitacion" returnType="void" visibility="public">
+          <Argument type="int" name="num_habitacion"/>
+        </Method>
+        <Method name="getCap_maxima" returnType="int" visibility="public"/>
+        <Method name="setCap_maxima" returnType="void" visibility="public">
+          <Argument type="int" name="cap_maxima"/>
+        </Method>
+        <Method name="getHuespedes" returnType="ArrayList&lt;Persona&gt;" visibility="public"/>
+        <Method name="addHuespedes" returnType="void" visibility="public">
+          <Argument type="Persona" name="huespedess"/>
+        </Method>
+        <Method name="addResponsable" returnType="void" visibility="public">
+          <Argument type="Persona" name="responsabl"/>
+        </Method>
+        <Method name="setHuespedes" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Persona&gt;" name="huespedes"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Hotel" package="Modelo" visibility="public" xPosition="517.0" yPosition="-8.0">
+      <Fields>
+        <Field name="habitacion" type="ArrayList&lt;Habitacion&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="anadirPersona" returnType="boolean" visibility="public">
+          <Argument type="int" name="numHabitacion"/>
+          <Argument type="Persona" name="persona"/>
+        </Method>
+        <Method name="obtenerInfo" returnType="String" visibility="public">
+          <Argument type="int" name="numero_hab"/>
+        </Method>
+        <Method name="listar_info_personas" returnType="String" visibility="public"/>
+        <Method name="capacidadMaxima" returnType="int" visibility="public">
+          <Argument type="int" name="numero_hab"/>
+        </Method>
+        <Method name="alquilar_habitacion" returnType="boolean" visibility="public">
+          <Argument type="int" name="num_habit"/>
+          <Argument type="Persona" name="responable"/>
+        </Method>
+        <Method name="cambiar_presio_Habitacion" returnType="void" visibility="public">
+          <Argument type="int" name="numero_hab"/>
+          <Argument type="double" name="nuevoPresio"/>
+        </Method>
+        <Method name="habitacionDispo" returnType="String" visibility="public">
+          <Argument type="int" name="piso"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="Modelo" visibility="public" xPosition="640.0" yPosition="430.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="apellido" type="String" visibility="package"/>
+        <Field name="cedula" type="int" visibility="package"/>
+        <Field name="telefono" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="cedula"/>
+          <Argument type="int" name="telefono"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getCedula" returnType="int" visibility="public"/>
+        <Method name="setCedula" returnType="void" visibility="public">
+          <Argument type="int" name="cedula"/>
+        </Method>
+        <Method name="getTelefono" returnType="int" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="int" name="telefono"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Prueba" package="Modelo" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Temporada" package="Modelo" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Hot" package="Vista" visibility="public" xPosition="1062.0" yPosition="157.0">
+      <Fields>
+        <Field name="h" type="Hotel" visibility="package"/>
+        <Field name="apellido" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton5" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton6" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel13" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel14" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel15" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jSeparator1" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="jSeparator2" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="jSeparator3" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField4" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="nhabitacion" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="nn" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="nn2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="nombre" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="np" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="rta" type="javax.swing.JTextArea" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton5ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton6ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="habitacion" source="Modelo.Hotel" target="Modelo.Habitacion" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Habitacion&gt;"/>
+    <HasRelation name="huespedes" source="Modelo.Habitacion" target="Modelo.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Persona&gt;"/>
+    <HasRelation name="responsable" source="Modelo.Habitacion" target="Modelo.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Modelo.Hotel" target="Modelo.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="h" source="Vista.Hot" target="Modelo.Hotel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Modelo.Habitacion" target="Modelo.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="entregar">
+  <ClassDiagramComponents>
+    <Class name="Serie" package="" visibility="public" xPosition="288.0" yPosition="214.0">
+      <Fields>
+        <Field name="titulo" type="string" visibility="private"/>
+        <Field name="anio" type="int" visibility="private"/>
+        <Field name="sinopsis" type="string" visibility="private"/>
+        <Field name="genero" type="Genero" visibility="private"/>
+        <Field name="personas" type="Personaje" visibility="private"/>
+        <Field name="resenas" type="string" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addTemporada" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="" visibility="public" xPosition="41.0" yPosition="25.0">
+      <Fields>
+        <Field name="nombre" type="string" visibility="private"/>
+        <Field name="correo" type="string" visibility="private"/>
+        <Field name="fecha_nacimiento" type="Fecha" visibility="private"/>
+        <Field name="series_vistas" type="Serie" visibility="private"/>
+        <Field name="series_favoritas" type="Serie" visibility="private"/>
+        <Field name="capitulos" type="Capitulo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="capitulosVistos" returnType="void" visibility="public"/>
+        <Method name="untitledMethod1" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Temporadas" package="" visibility="public" xPosition="595.0" yPosition="12.0">
+      <Fields>
+        <Field name="nombrbe" type="string" visibility="private"/>
+        <Field name="capitulo" type="Capitulo" visibility="private"/>
+        <Field name="sinopsis" type="string" visibility="private"/>
+        <Field name="duracion" type="int" visibility="private"/>
+        <Field name="fecha_produccion" type="Fecha" visibility="private"/>
+        <Field name="fecha_estreno" type="Fecha" visibility="private"/>
+        <Field name="vista" type="boolean" visibility="private"/>
+        <Field name="cancelada" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addCapitulo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Fecha" package="" visibility="public" xPosition="288.0" yPosition="12.0">
+      <Fields>
+        <Field name="dia" type="int" visibility="private"/>
+        <Field name="mes" type="int" visibility="private"/>
+        <Field name="anio" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getFecha" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Capitulo" package="" visibility="public" xPosition="727.0" yPosition="315.0">
+      <Fields>
+        <Field name="nombre" type="string" visibility="private"/>
+        <Field name="duracion" type="int" visibility="private"/>
+        <Field name="sinopsis" type="string" visibility="private"/>
+        <Field name="visita" type="boolean" visibility="private"/>
+        <Field name="serie" type="Serie" visibility="private"/>
+        <Field name="resenas" type="string" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="duracion" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Subtitulo" package="" visibility="public" xPosition="511.0" yPosition="271.0">
+      <Fields>
+        <Field name="idioma" type="string" visibility="private"/>
+        <Field name="capitulo" type="Capitulo" visibility="private"/>
+        <Field name="actor" type="Actor" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addAlCapitulo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Genero" package="" visibility="public" xPosition="41.0" yPosition="271.0">
+      <Fields>
+        <Field name="terror" type="string" visibility="private"/>
+        <Field name="accion" type="string" visibility="private"/>
+        <Field name="comedia" type="string" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerGenero" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Personaje" package="" visibility="public" xPosition="269.0" yPosition="430.0">
+      <Fields>
+        <Field name="nombre" type="string" visibility="private"/>
+        <Field name="capitulo" type="Capitulo" visibility="private"/>
+        <Field name="actor" type="Actor" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerCapitulo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Critica" package="" visibility="public" xPosition="505.0" yPosition="444.0">
+      <Fields>
+        <Field name="fecha_comentario" type="Fecha" visibility="private"/>
+        <Field name="comentario" type="String" visibility="private"/>
+        <Field name="puntuacion" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="hacerCritica" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Actor" package="" visibility="public" xPosition="46.0" yPosition="430.0">
+      <Fields>
+        <Field name="nombre" type="string" visibility="private"/>
+        <Field name="personaje" type="Personaje" visibility="private"/>
+        <Field name="serie" type="Serie" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="personaje" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="Usuario" target="Fecha" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="se divide en" source="Serie" target="Genero" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Temporadas" target="Capitulo" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="tiene" source="Critica" target="Fecha" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="le gusta" source="Usuario" target="Capitulo" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="contiene" source="Serie" target="Critica" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Serie" target="Fecha" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="interpreta" source="Personaje" target="Subtitulo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Temporadas" target="Serie" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="tiene" source="Temporadas" target="Fecha" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="es un" source="Actor" target="Personaje" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

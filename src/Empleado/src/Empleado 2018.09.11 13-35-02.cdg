@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Empleado">
+  <ClassDiagramComponents>
+    <Class name="Comercial" package="empleado" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="comision" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Integer" name="edad"/>
+          <Argument type="double" name="salario"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getComision" returnType="double" visibility="public"/>
+        <Method name="setComision" returnType="void" visibility="public">
+          <Argument type="double" name="comision"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getEdad" returnType="Integer" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="Integer" name="edad"/>
+        </Method>
+        <Method name="getSalario" returnType="double" visibility="public"/>
+        <Method name="setSalario" returnType="void" visibility="public">
+          <Argument type="double" name="salario"/>
+        </Method>
+        <Method name="plus" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ejecutable" package="empleado" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Empleado" package="empleado" visibility="public" isAbstract="true" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="edad" type="Integer" visibility="package"/>
+        <Field name="salario" type="double" visibility="package"/>
+        <Field name="PLUS" type="Integer" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Integer" name="edad"/>
+          <Argument type="double" name="salario"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="plus" returnType="void" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Repartidor" package="empleado" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="zona" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Integer" name="edad"/>
+          <Argument type="double" name="salario"/>
+          <Argument type="String" name="zona"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getZona" returnType="String" visibility="public"/>
+        <Method name="setZona" returnType="void" visibility="public">
+          <Argument type="String" name="zona"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getEdad" returnType="Integer" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="Integer" name="edad"/>
+        </Method>
+        <Method name="getSalario" returnType="double" visibility="public"/>
+        <Method name="setSalario" returnType="void" visibility="public">
+          <Argument type="double" name="salario"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="plus" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="empleado.Repartidor" target="empleado.Empleado"/>
+    <IsRelation name="is" source="empleado.Comercial" target="empleado.Empleado"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
